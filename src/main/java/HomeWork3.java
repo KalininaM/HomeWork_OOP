@@ -36,7 +36,7 @@ class StreamComporator{
 }
 class StreamService{
     public void sortStream(List<Stream> streams){
-        streams.sort(new StreamComporator());
+        //streams.sort(new StreamComporator());
     }
 }
 class Controller{
