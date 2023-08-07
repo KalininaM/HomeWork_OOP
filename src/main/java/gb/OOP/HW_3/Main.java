@@ -1,27 +1,69 @@
 package gb.OOP.HW_3;
 
-import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        Random r = new Random();
 
-        StudentStream stream = new StudentStream(1);
-
-        StudentGroup group1 = new StudentGroup("Group 1", 20);
-        StudentGroup group2 = new StudentGroup("Group 2", 10);
-        StudentGroup group3 = new StudentGroup("Group 3", 15);
-
-        stream.addGroup(group1);
-        stream.addGroup(group2);
-        stream.addGroup(group3);
-
-        for (StudentGroup group : stream) {
-            System.out.println(group);
+        Stream stream1 = new Stream();
+        int groups = r.nextInt(10) + 1;
+        for (int i = 0; i <= groups; i++) {
+            stream1.addGroup(new LearnGroup());
         }
-        System.out.println("Отсортированный список: ");
-        Collections.sort(stream.getGroups());
-        for (StudentGroup group : stream) {
-            System.out.println(group);
+
+        Stream stream2 = new Stream();
+        groups = r.nextInt(10) + 1;
+        for (int i = 0; i <= groups; i++) {
+            stream2.addGroup(new LearnGroup());
         }
+
+        Stream stream3 = new Stream();
+        groups = r.nextInt(10) + 1;
+        for (int i = 0; i <= groups; i++) {
+            stream3.addGroup(new LearnGroup());
+        }
+
+        Stream stream4 = new Stream();
+        groups = r.nextInt(10) + 1;
+        for (int i = 0; i <= groups; i++) {
+            stream4.addGroup(new LearnGroup());
+        }
+
+        Stream stream5 = new Stream();
+        groups = r.nextInt(10) + 1;
+        for (int i = 0; i <= groups; i++) {
+            stream5.addGroup(new LearnGroup());
+        }
+
+        StreamService streamService = new StreamService();
+        streamService.addStream(stream1);
+        streamService.addStream(stream2);
+        streamService.addStream(stream3);
+        streamService.addStream(stream4);
+        streamService.addStream(stream5);
+
+        List<Stream> tmp = streamService.getStreamList();
+        for (Stream stream:tmp) {
+            System.out.print(stream.getGroupList().toString());
+            System.out.println();
+        }
+        System.out.println("==============");
+
+        Controller controller = new Controller();
+        controller.setStreamService(streamService);
+        for (Stream stream:tmp) {
+            System.out.print(stream.getGroupList().size() + " ");
+        }
+        System.out.println();
+        System.out.println("==============");
+        controller.sortStream();
+        for (Stream stream:tmp) {
+            System.out.print(stream.getGroupList().size() + " ");
+        }
+        System.out.println();
+        System.out.println("==============");
+
     }
 }
