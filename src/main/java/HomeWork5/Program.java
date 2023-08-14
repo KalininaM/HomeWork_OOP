@@ -31,7 +31,7 @@ public class Program {
         view.reservationTable(new Date(), 2, "Семен");
         System.out.println(("==================="));
         
-        view.changeReservationTable(1002, new Date(), 4, "Семен");
+        view.changeReservationTable(1003, new Date(), 4, "Семен");
     }
 
 }
