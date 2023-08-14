@@ -7,7 +7,6 @@ import HomeWork5.presenters.Model;
 import HomeWork5.presenters.View;
 import HomeWork5.views.BookingView;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Program {
@@ -27,14 +26,12 @@ public class Program {
 
         view.reservationTable(new Date(), 3, "Станислав");
         System.out.println(("==================="));
-        view.reservationTable(new Date(), 1, "Евгений");
+        view.reservationTable(new Date(), 1, "Анатолий");
         System.out.println(("==================="));
-        view.reservationTable(new Date(), 2, "Павел");
+        view.reservationTable(new Date(), 2, "Семен");
         System.out.println(("==================="));
-
-
-
-        view.changeReservationTable(1001, new Date(), 4, "Станислав");
+        
+        view.changeReservationTable(1002, new Date(), 4, "Семен");
     }
 
 }
